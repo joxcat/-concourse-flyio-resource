@@ -14,17 +14,21 @@ def _out(instream, src='.'):
     # no-cache
     # region string
     # strategy string
-    _params = payload["params"] if "params" in payload else {}
+    params = payload["params"] if "params" in payload else {}
 
     api_key = source["api_key"]
     app_name = source["app_name"]
     config = f" --config='{source["config"]}' " if "config" in source else ""
 
+    dir = params["dir"] if "dir" in params else ""
+
+    current_dir = f"{src}/{dir}"
+
     # Deploy
     run(
         f"flyctl deploy --access-token='{api_key}' --app='{app_name}'{config}",
         shell=True,
-        cwd=src,
+        cwd=current_dir,
         stdout=stderr,
         text=True,
     ).check_returncode()
