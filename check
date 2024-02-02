@@ -16,7 +16,7 @@ def _check(instream):
     app_status = loads(result.stdout)
 
     return [{
-        "version": app_status["Version"]
+        "version": str(app_status["Version"])
     }]
 
 if __name__ == "__main__":

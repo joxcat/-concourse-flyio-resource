@@ -40,7 +40,7 @@ def _out(instream, src='.'):
     app_status = loads(check_result.stdout)
 
     return {
-        "version": { "version": app_status["Version"] },
+        "version": { "version": str(app_status["Version"]) },
         "metadata": {},
     }
 
