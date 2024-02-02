@@ -15,9 +15,9 @@ def _check(instream):
     print(result.stderr, file=stderr)
     app_status = loads(result.stdout)
 
-    return {
+    return [{
         "version": app_status["Version"]
-    }
+    }]
 
 if __name__ == "__main__":
     print(dumps(_check(stdin), separators=[",", ":"]))
