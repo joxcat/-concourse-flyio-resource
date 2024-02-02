@@ -45,7 +45,7 @@ def _out(instream, src='.'):
 
     return {
         "version": { "version": str(app_status["Version"]) },
-        "metadata": {},
+        "metadata": [],
     }
 
 if __name__ == "__main__":

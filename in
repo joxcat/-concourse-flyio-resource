@@ -11,7 +11,7 @@ def _in(instream, _dest="."):
     # Do nothing we cannot pull a deployement
     return {
         "version": version,
-        "metadata": {},
+        "metadata": [],
     }
 
 if __name__ == "__main__":
